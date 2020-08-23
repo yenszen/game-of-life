@@ -1,5 +1,6 @@
 import React from "react";
 import Grid from "./Grid";
+import Buttons from "./Buttons";
 
 class Main extends React.Component {
   constructor() {
@@ -24,6 +25,7 @@ class Main extends React.Component {
     });
   };
 
+  // seed = random
   seed = () => {
     let gridCopy = arrayClone(this.state.gridFull);
     for (let i = 0; i < this.rows; i++) {
@@ -45,6 +47,44 @@ class Main extends React.Component {
 
   pauseButton = () => {
     clearInterval(this.intervalId);
+  };
+
+  slow = () => {
+    this.speed = 1000;
+    this.playButton();
+  };
+
+  fast = () => {
+    this.speed = 100;
+    this.playButton();
+  };
+
+  clear = () => {
+    let grid = Array(this.rows)
+      .fill()
+      .map(() => Array(this.cols).fill(false));
+
+    this.setState({
+      gridFull: grid,
+      generation: 0
+    });
+  };
+
+  gridSize = size => {
+    switch (size) {
+      case "1":
+        this.cols = 25;
+        this.rows = 25;
+        break;
+      case "2":
+        this.cols = 50;
+        this.rows = 30;
+        break;
+      default:
+        this.cols = 70;
+        this.rows = 50;
+    }
+    this.clear();
   };
 
   play = () => {
@@ -86,6 +126,15 @@ class Main extends React.Component {
     return (
       <div>
         <h1>The Game of Life</h1>
+        <Buttons
+          playButton={this.playButton}
+          pauseButton={this.pauseButton}
+          slow={this.slow}
+          fast={this.fast}
+          clear={this.clear}
+          seed={this.seed}
+          gridSize={this.gridSize}
+        />
         <Grid
           gridFull={this.state.gridFull}
           rows={this.rows}

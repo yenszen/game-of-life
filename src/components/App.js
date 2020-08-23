@@ -1,10 +1,10 @@
 import React from "react";
-import Game from "./components/Game";
+import Main from "./Main";
 
 const App = () => {
   return (
     <div>
-      <Game />
+      <Main />
     </div>
   );
 };

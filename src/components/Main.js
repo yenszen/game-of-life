@@ -117,11 +117,6 @@ class Main extends React.Component {
     });
   };
 
-  componentDidMount() {
-    this.seed();
-    this.playButton();
-  }
-
   render() {
     return (
       <div>

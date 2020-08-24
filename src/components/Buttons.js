@@ -2,6 +2,7 @@ import React from "react";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import DropdownItem from "react-bootstrap/DropdownItem";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import Button from "react-bootstrap/Button";
 
 class Buttons extends React.Component {
   handleSelect = e => {
@@ -12,24 +13,24 @@ class Buttons extends React.Component {
     return (
       <div className="center">
         <ButtonToolbar>
-          <button className="btn btn-default" onClick={this.props.playButton}>
+          <Button variant="primary" size="sm" onClick={this.props.playButton}>
             Play
-          </button>
-          <button className="btn btn-default" onClick={this.props.pauseButton}>
+          </Button>
+          <Button variant="primary" size="sm" onClick={this.props.pauseButton}>
             Pause
-          </button>
-          <button className="btn btn-default" onClick={this.props.clear}>
+          </Button>
+          <Button variant="primary" size="sm" onClick={this.props.clear}>
             Clear
-          </button>
-          <button className="btn btn-default" onClick={this.props.slow}>
+          </Button>
+          <Button variant="primary" size="sm" onClick={this.props.slow}>
             Slow
-          </button>
-          <button className="btn btn-default" onClick={this.props.fast}>
+          </Button>
+          <Button variant="primary" size="sm" onClick={this.props.fast}>
             Fast
-          </button>
-          <button className="btn btn-default" onClick={this.props.seed}>
+          </Button>
+          <Button variant="primary" size="sm" onClick={this.props.seed}>
             Random
-          </button>
+          </Button>
           <DropdownButton
             title="Grid Size"
             id="size-menu"

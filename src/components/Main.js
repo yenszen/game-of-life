@@ -35,8 +35,10 @@ class Main extends React.Component {
         }
       }
     }
+    clearInterval(this.intervalId);
     this.setState({
-      gridFull: gridCopy
+      gridFull: gridCopy,
+      generation: 0
     });
   };
 
@@ -107,7 +109,7 @@ class Main extends React.Component {
 
         // below 2 LOC updates status of cell: alive or dead
         if (g[i][j] && (count < 2 || count > 3)) g2[i][j] = false; // if <2 or >3 neighbors, the cell dies
-        if (!g[i][j] && count == 3) g2[i][j] = true; // if dead cell has 3 neighbors, the cell lives
+        if (!g[i][j] && count === 3) g2[i][j] = true; // if dead cell has 3 neighbors, the cell lives
       }
     }
 

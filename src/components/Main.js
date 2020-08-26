@@ -7,7 +7,7 @@ class Main extends React.Component {
   constructor() {
     super();
     this.speed = 100;
-    this.rows = 30;
+    this.rows = 35;
     this.cols = 50;
 
     this.state = {
@@ -76,16 +76,12 @@ class Main extends React.Component {
   gridSize = size => {
     switch (size) {
       case "1":
-        this.cols = 25;
-        this.rows = 25;
-        break;
-      case "2":
-        this.cols = 50;
-        this.rows = 30;
+        this.cols = 75;
+        this.rows = 50;
         break;
       default:
-        this.cols = 70;
-        this.rows = 50;
+        this.cols = 50;
+        this.rows = 35;
     }
     this.clear();
   };

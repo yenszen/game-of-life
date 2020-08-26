@@ -65,3 +65,9 @@ h4 {
 h4 {
   margin-top: 0px;
 }
+
+.about {
+  background-color: green;
+  display: flex;
+  flex-flow: row nowrap;
+}

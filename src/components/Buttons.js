@@ -12,6 +12,7 @@ class Buttons extends React.Component {
   render() {
     return (
       <div className="center">
+        <h4>Controls</h4>
         <ButtonToolbar>
           <Button
             variant="outline-light"
@@ -41,6 +42,7 @@ class Buttons extends React.Component {
           </Button>
           <DropdownButton
             variant="outline-light"
+            size="sm"
             title="Grid Size"
             id="size-menu"
             onSelect={this.handleSelect}

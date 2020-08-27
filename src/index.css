@@ -33,7 +33,7 @@ body {
   width: 150px;
   line-height: 0;
   margin: auto;
-  box-shadow: 0px 0px 20px white;
+  box-shadow: 0px 0px 10px white;
   margin-top: 20px;
 }
 
@@ -54,7 +54,27 @@ h4 {
 
 .about {
   /* background-color: green; */
+  margin: 1rem 0;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: space-evenly;
   color: white;
+}
+
+.rules {
+  width: 40%;
+  border: white 1px solid;
+  border-radius: 10px;
+}
+
+.information {
+  width: 55%;
+  border: white 1px solid;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: nowrap;
 }

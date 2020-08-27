@@ -273,21 +273,23 @@ class Main extends React.Component {
     return (
       <div>
         <h1>The Game of Life</h1>
-        <Buttons
-          playButton={this.playButton}
-          pauseButton={this.pauseButton}
-          slow={this.slow}
-          fast={this.fast}
-          clear={this.clear}
-          seed={this.seed}
-          gridSize={this.gridSize}
-        />
-        <Presets
-          glider={this.glider}
-          pentaDecathlon={this.pentaDecathlon}
-          pulsar={this.pulsar}
-          gosperGun={this.gosperGun}
-        />
+        <div className="controls">
+          <Buttons
+            playButton={this.playButton}
+            pauseButton={this.pauseButton}
+            slow={this.slow}
+            fast={this.fast}
+            clear={this.clear}
+            seed={this.seed}
+            gridSize={this.gridSize}
+          />
+          <Presets
+            glider={this.glider}
+            pentaDecathlon={this.pentaDecathlon}
+            pulsar={this.pulsar}
+            gosperGun={this.gosperGun}
+          />
+        </div>
         <Grid
           gridFull={this.state.gridFull}
           rows={this.rows}

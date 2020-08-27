@@ -13,25 +13,34 @@ class Buttons extends React.Component {
     return (
       <div className="center">
         <ButtonToolbar>
-          <Button variant="primary" size="sm" onClick={this.props.playButton}>
+          <Button
+            variant="outline-light"
+            size="sm"
+            onClick={this.props.playButton}
+          >
             Play
           </Button>
-          <Button variant="primary" size="sm" onClick={this.props.pauseButton}>
+          <Button
+            variant="outline-light"
+            size="sm"
+            onClick={this.props.pauseButton}
+          >
             Pause
           </Button>
-          <Button variant="primary" size="sm" onClick={this.props.clear}>
+          <Button variant="outline-light" size="sm" onClick={this.props.clear}>
             Clear
           </Button>
-          <Button variant="primary" size="sm" onClick={this.props.slow}>
+          <Button variant="outline-light" size="sm" onClick={this.props.slow}>
             Slow
           </Button>
-          <Button variant="primary" size="sm" onClick={this.props.fast}>
+          <Button variant="outline-light" size="sm" onClick={this.props.fast}>
             Fast
           </Button>
-          <Button variant="primary" size="sm" onClick={this.props.seed}>
+          <Button variant="outline-light" size="sm" onClick={this.props.seed}>
             Random
           </Button>
           <DropdownButton
+            variant="outline-light"
             title="Grid Size"
             id="size-menu"
             onSelect={this.handleSelect}

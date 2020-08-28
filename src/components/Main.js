@@ -28,7 +28,10 @@ class Main extends React.Component {
 
   // seed = random
   seed = () => {
-    let gridCopy = arrayClone(this.state.gridFull);
+    let gridCopy = Array(this.rows)
+      .fill()
+      .map(() => Array(this.cols).fill(0));
+
     for (let i = 0; i < this.rows; i++) {
       for (let j = 0; j < this.cols; j++) {
         if (Math.floor(Math.random() * 4) === 1) {
@@ -36,11 +39,12 @@ class Main extends React.Component {
         }
       }
     }
-    clearInterval(this.intervalId);
+
     this.setState({
       gridFull: gridCopy,
       generation: 0
     });
+    this.pauseButton();
   };
 
   playButton = () => {
@@ -71,6 +75,8 @@ class Main extends React.Component {
       gridFull: grid,
       generation: 0
     });
+
+    this.pauseButton();
   };
 
   gridSize = size => {
@@ -118,8 +124,9 @@ class Main extends React.Component {
 
   // PRESETS
   glider = () => {
-    this.clear();
-    let gridCopy = arrayClone(this.state.gridFull);
+    let gridCopy = Array(this.rows)
+      .fill()
+      .map(() => Array(this.cols).fill(0));
 
     gridCopy[1][3] = 1;
     gridCopy[2][1] = 1;
@@ -128,13 +135,16 @@ class Main extends React.Component {
     gridCopy[3][3] = 1;
 
     this.setState({
-      gridFull: gridCopy
+      gridFull: gridCopy,
+      generation: 0
     });
+    this.pauseButton();
   };
 
   pentaDecathlon = () => {
-    this.clear();
-    let gridCopy = arrayClone(this.state.gridFull);
+    let gridCopy = Array(this.rows)
+      .fill()
+      .map(() => Array(this.cols).fill(0));
 
     gridCopy[14][20] = 1;
     gridCopy[14][21] = 1;
@@ -150,12 +160,16 @@ class Main extends React.Component {
     gridCopy[15][27] = 1;
 
     this.setState({
-      gridFull: gridCopy
+      gridFull: gridCopy,
+      generation: 0
     });
+    this.pauseButton();
   };
 
   pulsar = () => {
-    let gridCopy = arrayClone(this.state.gridFull);
+    let gridCopy = Array(this.rows)
+      .fill()
+      .map(() => Array(this.cols).fill(0));
 
     gridCopy[6][20] = 1;
     gridCopy[6][21] = 1;
@@ -216,12 +230,16 @@ class Main extends React.Component {
     gridCopy[18][28] = 1;
 
     this.setState({
-      gridFull: gridCopy
+      gridFull: gridCopy,
+      generation: 0
     });
+    this.pauseButton();
   };
 
   gosperGun = () => {
-    let gridCopy = arrayClone(this.state.gridFull);
+    let gridCopy = Array(this.rows)
+      .fill()
+      .map(() => Array(this.cols).fill(0));
 
     gridCopy[6][1] = 1;
     gridCopy[6][2] = 1;
@@ -264,12 +282,13 @@ class Main extends React.Component {
     gridCopy[5][36] = 1;
 
     this.setState({
-      gridFull: gridCopy
+      gridFull: gridCopy,
+      generation: 0
     });
+    this.pauseButton();
   };
 
   render() {
-    console.log(this.state.gridFull);
     return (
       <div>
         <h1>The Game of Life</h1>

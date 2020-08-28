@@ -18,4 +18,4 @@ Further features to potentially add down the road include being able to manually
 
 Simply run `npm install` and `npm start` to access the game simulation through localhost:3000.
 
-Alternatively, the game is also hosted and deployed at gameoflife-ys.netlify.app
+Alternatively, the game is also hosted and deployed on [Netlify](https://gameoflife-ys.netlify.app/)
